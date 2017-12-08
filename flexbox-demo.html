@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<style>
+	body {
+		width:80%;
+		margin: 0 auto;
+	}
+	#flex-container input {
+		display:block;
+		width:70%;
+		margin: 0 auto;
+	}
+
+
+	#flex-container {
+		display:flex;
+		border: 1px solid #333;
+		margin-top: 100px;
+		height:500px;
+	}
+	#flex-container > div {
+		min-width:100px;
+		min-height:150px;
+		color:#fff;
+	}
+	#flex-container > div:nth-child(even) {
+		min-height:200px;
+	}
+	
+	@media (max-width: 600px) {
+	  #flex-container {
+		display: block;
+	  }
+	}
+	
+	
+	#flex1 {
+		background-color:#009688;
+	}
+	#flex2 {
+		background-color:#3949ab;
+	}
+	#flex3 {
+		background-color:#9c27b0;
+	}
+	#flex4 {
+		background-color:#b08752;
+	}
+	#flex5 {
+		background-color:#5ca6b0;
+	}
+
+	#flex-settings {
+		display:flex;
+		flex-direction:row;
+		justify-content:space-evenly;
+		align-items:flex-start:
+		align-content:center;
+		
+		margin-top: 20px;
+	}
+</style>
+
+</head>
+
+<body>
+
+<div id="flex-container">
+	<div id="flex1">
+		1
+		<input id="order-1" 		type="text" placeholder="order" onkeyup="setFlexItem(this)">
+		<input id="flex-grow-1" 	type="text" placeholder="flex-grow" onkeyup="setFlexItem(this)">
+		<input id="flex-shrink-1" 	type="text" placeholder="flex-shrink" onkeyup="setFlexItem(this)">
+		<input id="flex-basis-1" 	type="text" placeholder="flex-basis" onkeyup="setFlexItem(this)">
+		<input id="align-self-1" 	type="text" placeholder="align-self" onkeyup="setFlexItem(this)">
+	</div>	
+	<div id="flex2">
+		2
+		<input id="order-2" 		type="text" placeholder="order" onkeyup="setFlexItem(this)">
+		<input id="flex-grow-2" 	type="text" placeholder="flex-grow" onkeyup="setFlexItem(this)">
+		<input id="flex-shrink-2" 	type="text" placeholder="flex-shrink" onkeyup="setFlexItem(this)">
+		<input id="flex-basis-2" 	type="text" placeholder="flex-basis" onkeyup="setFlexItem(this)">
+		<input id="align-self-2" 	type="text" placeholder="align-self" onkeyup="setFlexItem(this)">
+	</div>	
+	<div id="flex3">
+		3
+		<input id="order-3" 		type="text" placeholder="order" onkeyup="setFlexItem(this)">
+		<input id="flex-grow-3" 	type="text" placeholder="flex-grow" onkeyup="setFlexItem(this)">
+		<input id="flex-shrink-3" 	type="text" placeholder="flex-shrink" onkeyup="setFlexItem(this)">
+		<input id="flex-basis-3" 	type="text" placeholder="flex-basis" onkeyup="setFlexItem(this)">
+		<input id="align-self-3" 	type="text" placeholder="align-self" onkeyup="setFlexItem(this)">
+	</div>	
+	<div id="flex4">
+		4
+		<input id="order-4" 		type="text" placeholder="order" onkeyup="setFlexItem(this)">
+		<input id="flex-grow-4" 	type="text" placeholder="flex-grow" onkeyup="setFlexItem(this)">
+		<input id="flex-shrink-4" 	type="text" placeholder="flex-shrink" onkeyup="setFlexItem(this)">
+		<input id="flex-basis-4" 	type="text" placeholder="flex-basis" onkeyup="setFlexItem(this)">
+		<input id="align-self-4" 	type="text" placeholder="align-self" onkeyup="setFlexItem(this)">
+	</div>	
+	<div id="flex5">
+		5
+		<input id="order-5" 		type="text" placeholder="order" onkeyup="setFlexItem(this)">
+		<input id="flex-grow-5" 	type="text" placeholder="flex-grow" onkeyup="setFlexItem(this)">
+		<input id="flex-shrink-5" 	type="text" placeholder="flex-shrink" onkeyup="setFlexItem(this)">
+		<input id="flex-basis-5" 	type="text" placeholder="flex-basis" onkeyup="setFlexItem(this)">
+		<input id="align-self-5" 	type="text" placeholder="align-self" onkeyup="setFlexItem(this)">
+	</div>	
+</div>
+
+<div id="flex-settings">
+	<div id="flex-direction">
+		<h4>flex-direction</h4>
+		<input type="radio" name="flex-direction" value="row" checked>row (default)<br>
+		<input type="radio" name="flex-direction" value="row-reverse">row-reverse<br>
+		<input type="radio" name="flex-direction" value="column">column<br>
+		<input type="radio" name="flex-direction" value="column-reverse">column-reverse<br>
+	</div>
+	<div id="flex-wrap">
+		<h4>flex-wrap</h4>
+		<input type="radio" name="flex-wrap" value="nowrap" checked>nowrap (default)<br>
+		<input type="radio" name="flex-wrap" value="wrap">wrap<br>
+		<input type="radio" name="flex-wrap" value="wrap-reverse">wrap-reverse<br>
+	</div>
+	<div id="justify-content">
+		<h4>justify-content</h4>
+		<input type="radio" name="justify-content" value="flex-start" checked>flex-start (default)<br>
+		<input type="radio" name="justify-content" value="flex-end">flex-end<br>
+		<input type="radio" name="justify-content" value="center">center<br>
+		<input type="radio" name="justify-content" value="space-between">space-between<br>
+		<input type="radio" name="justify-content" value="space-around">space-around<br>
+		<input type="radio" name="justify-content" value="space-evenly">space-evenly<br>
+	</div>
+	<div id="align-items">
+		<h4>align-items</h4>
+		<input type="radio" name="align-items" value="flex-start">flex-start<br>
+		<input type="radio" name="align-items" value="flex-end">flex-end<br>
+		<input type="radio" name="align-items" value="center">center<br>
+		<input type="radio" name="align-items" value="baseline">baseline<br>
+		<input type="radio" name="align-items" value="stretch" checked>stretch (default)<br>
+	</div>
+	<div id="align-content">
+		<h4>align-content</h4>
+		<input type="radio" name="align-content" value="flex-start" checked>flex-start (default)<br>
+		<input type="radio" name="align-content" value="flex-end">flex-end<br>
+		<input type="radio" name="align-content" value="center">center<br>
+		<input type="radio" name="align-content" value="space-between">space-between<br>
+		<input type="radio" name="align-content" value="space-around">space-around<br>
+		<input type="radio" name="align-content" value="space-evenly">space-evenly<br>
+	</div>
+</div>
+
+<div id="styles"></div>
+
+
+
+<script>
+
+/*
+ * Attach listeners to settings to change the flex display and print out the css
+*/
+/*
+// Flex Direction
+let radios = document.querySelectorAll("#flex-direction input");
+for(let i = 0; i < radios.length; i++) {
+    radios[i].onclick = function() {
+        document.querySelector("#flex-container").style.flexDirection = radios[i].value;
+		printStyles();
+    }
+}
+
+// Flex Wrap
+let radios2 = document.querySelectorAll("#flex-wrap input");
+for(let i = 0; i < radios2.length; i++) {
+    radios2[i].onclick = function() {
+        document.querySelector("#flex-container").style.flexWrap = radios2[i].value;
+		printStyles();
+    }
+}
+
+// Justify Content
+let radios3 = document.querySelectorAll("#justify-content input");
+for(let i = 0; i < radios3.length; i++) {
+    radios3[i].onclick = function() {
+        document.querySelector("#flex-container").style.justifyContent = radios3[i].value;
+		printStyles();
+    }
+}
+
+// Align items
+let radios4 = document.querySelectorAll("#align-items input");
+for(let i = 0; i < radios4.length; i++) {
+    radios4[i].onclick = function() {
+        document.querySelector("#flex-container").style.alignItems = radios4[i].value;
+		printStyles();
+    }
+}
+
+// Align content
+let radios5 = document.querySelectorAll("#align-content input");
+for(let i = 0; i < radios5.length; i++) {
+    radios5[i].onclick = function() {
+        document.querySelector("#flex-container").style.alignContent = radios5[i].value;
+		printStyles();
+    }
+}
+*/
+
+let radios = document.querySelectorAll("#flex-settings input");
+
+for(let i = 0; i < radios.length; i++) {
+	let myVal = radios[i].value;
+	let styleAttr = radios[i].name;
+	if(styleAttr.indexOf('-') > 0) {
+		styleAttr = styleAttr.substring(0,styleAttr.indexOf('-')) + styleAttr.substring(styleAttr.indexOf('-') + 1).charAt(0).toUpperCase() + styleAttr.substring(styleAttr.indexOf('-') + 2);
+	}
+	console.log(styleAttr);
+	radios[i].onclick = function() {
+		document.querySelector("#flex-container").style[styleAttr] = myVal;
+		printStyles();
+	}
+}
+
+
+function printStyles() {
+	let elem = document.getElementById("flex-container");
+	let styles = "display: flex;";
+	
+	let arr = ["flex-direction", "flex-wrap", "justify-content", "align-items", "align-content"];
+	
+	arr.forEach((a) => {
+		styles += `<br>${a}: ${window.getComputedStyle(elem,null).getPropertyValue(a)};`;
+	});
+	
+	//window.getComputedStyle(elem,null).getPropertyValue("flex-direction");
+	
+	document.getElementById("styles").innerHTML = styles;
+}
+
+
+
+
+/*
+ * Attach listeners to inputs of flex items
+*/
+
+function setFlexItem(e) {
+	let itemId = e.id;
+	itemId = itemId.substring(0,itemId.lastIndexOf('-'));
+	if(itemId.indexOf('-') > 0) {
+		itemId = itemId.substring(0,itemId.indexOf('-')) + itemId.substring(itemId.indexOf('-') + 1).charAt(0).toUpperCase() + itemId.substring(itemId.indexOf('-') + 2);
+	}
+	
+	let parentEl = e.parentElement;
+	parentEl.style[itemId] = e.value;
+}
+
+</script>
+
+</body>
+
+</html>
